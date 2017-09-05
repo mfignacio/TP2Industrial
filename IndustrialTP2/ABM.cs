@@ -142,15 +142,16 @@ namespace IndustrialTP2
             MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
+            TreeNode node = new TreeNode(dt.Rows[0]["Producto"].ToString());
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-              TreeNode node = new TreeNode(dt.Rows[i]["Producto"].ToString());
               node.Nodes.Add(dt.Rows[i]["Componente"].ToString());
-              treeViewABM.Nodes.Add(node);
-
+              
             }
-                            
-          }
+
+            treeViewABM.Nodes.Add(node);
+            treeViewABM.ExpandAll();
+        }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
@@ -161,12 +162,43 @@ namespace IndustrialTP2
 
         private void btnAgregarAlternatia_Click(object sender, EventArgs e)
         {
+            string componente = cboComponente.SelectedItem.ToString();
+            string alternativa = cboAlternativa.SelectedItem.ToString();
+            string semana = cboSemana.SelectedItem.ToString();
+            string producto = cboProductos.SelectedItem.ToString();
+
+            using (CargaAlternativa frmAlternativa = new CargaAlternativa(semana,producto,componente, alternativa))
+            {
+                frmAlternativa.ShowDialog();
+            }
+
+                
+
             MetroFramework.MetroMessageBox.Show(Owner, "Insercion correcta", "Alternativa Agregada Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void btnHecho_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cboComponente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string productoSeleccionado = cboProductos.SelectedItem.ToString();
+            string componenteSeleccionado = cboComponente.SelectedItem.ToString();
+
+            MySqlConnection conectar = new MySqlConnection("server=localhost; database=industrial;Uid=root;pwd=root;");
+
+            conectar.Open();
+            MySqlCommand comando = new MySqlCommand("SELECT distinct description_std FROM diseños WHERE description_std <> '" + productoSeleccionado + "' AND description_std <> '" + componenteSeleccionado + "'  ORDER BY description_std ASC", conectar);
+            MySqlDataReader almacena = comando.ExecuteReader();
+
+            while (almacena.Read())
+            {
+                cboAlternativa.Refresh();
+                cboAlternativa.Items.Add(almacena.GetValue(0).ToString());
+            }
+            conectar.Close();
         }
     }
 }

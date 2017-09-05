@@ -71,6 +71,12 @@
     <Compile Include="AgregarModificar.designer.cs">
       <DependentUpon>AgregarModificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="CargaAlternativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargaAlternativa.Designer.cs">
+      <DependentUpon>CargaAlternativa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarModificar.resx">
       <DependentUpon>AgregarModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargaAlternativa.resx">
+      <DependentUpon>CargaAlternativa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -151,6 +151,7 @@
             this.cboComponente.Size = new System.Drawing.Size(236, 29);
             this.cboComponente.TabIndex = 6;
             this.cboComponente.UseSelectable = true;
+            this.cboComponente.SelectedIndexChanged += new System.EventHandler(this.cboComponente_SelectedIndexChanged);
             // 
             // cboProductos
             // 

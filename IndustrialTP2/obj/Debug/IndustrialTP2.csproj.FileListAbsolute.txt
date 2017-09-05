@@ -15,3 +15,5 @@ c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\Industria
 c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\TPIndustrial.AgregarModificar.resources
 c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\WindowsFormsApplication8.Login.resources
 c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\TPIndustrial.NuevoProducto.resources
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.csprojResolveAssemblyReference.cache
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.CargaAlternativa.resources
