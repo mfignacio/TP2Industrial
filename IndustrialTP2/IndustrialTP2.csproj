@@ -77,11 +77,35 @@
     <Compile Include="CargaAlternativa.Designer.cs">
       <DependentUpon>CargaAlternativa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Explosion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Explosion.Designer.cs">
+      <DependentUpon>Explosion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExplotarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExplotarProducto.Designer.cs">
+      <DependentUpon>ExplotarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Implosion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Implosion.Designer.cs">
+      <DependentUpon>Implosion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImplosionarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImplosionarProducto.Designer.cs">
+      <DependentUpon>ImplosionarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -106,8 +130,20 @@
     <EmbeddedResource Include="CargaAlternativa.resx">
       <DependentUpon>CargaAlternativa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Explosion.resx">
+      <DependentUpon>Explosion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExplotarProducto.resx">
+      <DependentUpon>ExplotarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Implosion.resx">
+      <DependentUpon>Implosion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImplosionarProducto.resx">
+      <DependentUpon>ImplosionarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

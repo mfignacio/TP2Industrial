@@ -23,5 +23,21 @@ namespace IndustrialTP2
             using (ABM frmABM = new ABM())
             { frmABM.ShowDialog(); }
         }
+
+        private void btnExplosion_Click(object sender, EventArgs e)
+        {
+            using (Explosion frmExplosion = new Explosion())
+            {
+                frmExplosion.ShowDialog();
+            }
+        }
+
+        private void btnImplosion_Click(object sender, EventArgs e)
+        {
+            using (Implosion frnImplosion = new Implosion())
+            {
+                frnImplosion.ShowDialog();
+            }
+        }
     }
 }

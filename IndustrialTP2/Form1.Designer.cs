@@ -52,11 +52,13 @@
             this.btnExplosion.Location = new System.Drawing.Point(90, 168);
             this.btnExplosion.Name = "btnExplosion";
             this.btnExplosion.Size = new System.Drawing.Size(102, 51);
+            this.btnExplosion.Style = MetroFramework.MetroColorStyle.Red;
             this.btnExplosion.TabIndex = 1;
             this.btnExplosion.Text = "EXPLOSION";
             this.btnExplosion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnExplosion.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnExplosion.UseSelectable = true;
+            this.btnExplosion.Click += new System.EventHandler(this.btnExplosion_Click);
             // 
             // btnImplosion
             // 
@@ -64,11 +66,13 @@
             this.btnImplosion.Location = new System.Drawing.Point(90, 252);
             this.btnImplosion.Name = "btnImplosion";
             this.btnImplosion.Size = new System.Drawing.Size(102, 50);
+            this.btnImplosion.Style = MetroFramework.MetroColorStyle.Green;
             this.btnImplosion.TabIndex = 2;
             this.btnImplosion.Text = "IMPLOSION";
             this.btnImplosion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnImplosion.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnImplosion.UseSelectable = true;
+            this.btnImplosion.Click += new System.EventHandler(this.btnImplosion_Click);
             // 
             // Form1
             // 

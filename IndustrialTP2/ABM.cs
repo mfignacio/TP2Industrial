@@ -21,7 +21,8 @@ namespace IndustrialTP2
             MySqlConnection conectar = new MySqlConnection("server=localhost; database=industrial;Uid=root;pwd=root;");
 
             conectar.Open();
-            MySqlCommand comando = new MySqlCommand("SELECT distinct Producto FROM carga ORDER BY Producto ASC", conectar);
+            MySqlCommand comando = new MySqlCommand("SELECT distinct description_std FROM diseños ORDER BY description_std ASC", conectar);
+            //MySqlCommand comando = new MySqlCommand("SELECT distinct Producto FROM carga ORDER BY Producto ASC", conectar);
             MySqlDataReader almacena = comando.ExecuteReader();
 
             while (almacena.Read())
@@ -95,7 +96,9 @@ namespace IndustrialTP2
                 }
                 conectar3.Close();
                 bandera = 0;
+                
             }
+            //listarTabla();
         }
 
         private void btnAgregarHijo_Click(object sender, EventArgs e)
@@ -111,6 +114,61 @@ namespace IndustrialTP2
 
         private void listarTabla()
         {
+            treeViewABM.Nodes.Clear();
+
+            string producto = cboProductos.SelectedItem.ToString();
+            string conString = @"Data Source=localhost;port=3306;Initial Catalog=industrial;User Id=root;password=root";
+            MySqlConnection con = new MySqlConnection(conString);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM carga WHERE Producto LIKE  '" + producto + "' GROUP BY id_carga ", con);
+            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            TreeNode node = new TreeNode(dt.Rows[0]["Producto"].ToString());
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                //if componente = leer hijo en 1 && hijo del componente no tiene hijo hago esto
+                string variable = dt.Rows[i]["LeerHijo"].ToString();
+                char var = variable[0];
+                string esTambienPadre = dt.Rows[i]["Componente"].ToString();
+                string hijo = "";
+
+                string conString2 = @"Data Source=localhost;port=3306;Initial Catalog=industrial;User Id=root;password=root";
+                MySqlConnection con2 = new MySqlConnection(conString2);
+                MySqlCommand cmd2 = new MySqlCommand("SELECT Componente FROM carga WHERE Producto LIKE  '" + esTambienPadre + "' AND LeerHijo = 1", con2);
+                MySqlDataAdapter sda2 = new MySqlDataAdapter(cmd2);
+                DataTable dt2 = new DataTable();
+                sda2.Fill(dt2);
+
+                if (dt2.Rows.Count !=0)
+                {
+                    hijo = dt2.Rows[0]["Componente"].ToString();
+
+
+                    if (var == '1'/*tiene hijo*/ && hijo != "")
+                    {
+                        // treeNode = new TreeNode("Dot Net Perls", array);
+                        TreeNode nodeHijo = new TreeNode(hijo);
+                        TreeNode[] array = new TreeNode[] { nodeHijo };
+                         node = new TreeNode(esTambienPadre, array);
+                        
+                    }
+                }
+                else
+                {
+                    node.Nodes.Add(dt.Rows[i]["Componente"].ToString());
+                    
+                    //if componente = leer hijo en 1 hijo del componente si existe
+                    //asigno variable hijo al hijo y lo agrego al padre y sigo el ciclo
+                }
+              
+            }
+
+            treeViewABM.Nodes.Add(node);
+            treeViewABM.ExpandAll();
+
+
+
             //string producto = cboProductos.SelectedItem.ToString();
             //string conString = @"Data Source=localhost;port=3306;Initial Catalog=industrial;User Id=root;password=root";
             //using (MySqlConnection con = new MySqlConnection(conString))
@@ -133,24 +191,7 @@ namespace IndustrialTP2
             //        }
             //    }
             //}
-            treeViewABM.Nodes.Clear();
-
-            string producto = cboProductos.SelectedItem.ToString();
-            string conString = @"Data Source=localhost;port=3306;Initial Catalog=industrial;User Id=root;password=root";
-            MySqlConnection con = new MySqlConnection(conString);
-            MySqlCommand cmd = new MySqlCommand("SELECT id_carga , Producto, Componente, Cantidad, Unidad FROM carga WHERE Producto LIKE  '" + producto + "' GROUP BY id_carga ", con);
-            MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            TreeNode node = new TreeNode(dt.Rows[0]["Producto"].ToString());
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-              node.Nodes.Add(dt.Rows[i]["Componente"].ToString());
-              
-            }
-
-            treeViewABM.Nodes.Add(node);
-            treeViewABM.ExpandAll();
+            
         }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
@@ -172,9 +213,7 @@ namespace IndustrialTP2
                 frmAlternativa.ShowDialog();
             }
 
-                
-
-            MetroFramework.MetroMessageBox.Show(Owner, "Insercion correcta", "Alternativa Agregada Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            //   MetroFramework.MetroMessageBox.Show(Owner, "Insercion correcta", "Alternativa Agregada Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void btnHecho_Click(object sender, EventArgs e)
@@ -199,6 +238,11 @@ namespace IndustrialTP2
                 cboAlternativa.Items.Add(almacena.GetValue(0).ToString());
             }
             conectar.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

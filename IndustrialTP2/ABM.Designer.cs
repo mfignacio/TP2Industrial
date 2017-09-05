@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.treeViewABM = new System.Windows.Forms.TreeView();
             this.btnNuevoProducto = new MetroFramework.Controls.MetroTile();
             this.cboSemana = new MetroFramework.Controls.MetroComboBox();
             this.Semana = new MetroFramework.Controls.MetroLabel();
@@ -44,7 +45,6 @@
             this.btnModificar = new MetroFramework.Controls.MetroTile();
             this.btnEliminar = new MetroFramework.Controls.MetroTile();
             this.btnHecho = new MetroFramework.Controls.MetroTile();
-            this.treeViewABM = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // treeViewABM
+            // 
+            this.treeViewABM.Location = new System.Drawing.Point(7, 236);
+            this.treeViewABM.Name = "treeViewABM";
+            this.treeViewABM.Size = new System.Drawing.Size(727, 199);
+            this.treeViewABM.TabIndex = 13;
             // 
             // btnNuevoProducto
             // 
@@ -238,13 +246,6 @@
             this.btnHecho.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.btnHecho.UseSelectable = true;
             this.btnHecho.Click += new System.EventHandler(this.btnHecho_Click);
-            // 
-            // treeViewABM
-            // 
-            this.treeViewABM.Location = new System.Drawing.Point(7, 236);
-            this.treeViewABM.Name = "treeViewABM";
-            this.treeViewABM.Size = new System.Drawing.Size(727, 199);
-            this.treeViewABM.TabIndex = 13;
             // 
             // ABM
             // 
