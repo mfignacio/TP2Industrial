@@ -1,0 +1,17 @@
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\IndustrialTP2.exe.config
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\IndustrialTP2.exe
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\IndustrialTP2.pdb
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\MetroFramework.Design.dll
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\MetroFramework.dll
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\MetroFramework.Fonts.dll
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\MySql.Data.dll
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\bin\Debug\MySql.Data.xml
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.ABM.resources
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.Form1.resources
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.Properties.Resources.resources
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.csproj.GenerateResource.Cache
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.exe
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\IndustrialTP2.pdb
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\TPIndustrial.AgregarModificar.resources
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\WindowsFormsApplication8.Login.resources
+c:\users\developer\documents\visual studio 2015\Projects\IndustrialTP2\IndustrialTP2\obj\Debug\TPIndustrial.NuevoProducto.resources
